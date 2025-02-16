@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: vcluster
+  namespace: argocd
+spec:
+  description: "Projet avec accès complet et sans restrictions"
+  sourceRepos:
+    - '*'  
+  destinations:
+    - namespace: '*'
+      server: '*'  
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
